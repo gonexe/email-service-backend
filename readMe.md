@@ -32,7 +32,7 @@ accessed [here](https://email-service-backend-e5cf2a6fc011.herokuapp.com/api-doc
    file contains the interface that all email provider implementations (e.g., `SendGridProvider.ts`,
    `MailgunProvider.ts`)
    must
-   adhere to. This ensures that the EmailService.ts can interact with any email provider in a
+   adhere to. This ensures that the `EmailService.ts` can interact with any email provider in a
    consistent manner, promoting flexibility and extensibility.
 
 ## Shared Libraries
