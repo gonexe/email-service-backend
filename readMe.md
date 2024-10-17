@@ -1,4 +1,11 @@
-# Email Service System
+# Email Service - Backend
+
+## Objective
+
+The objective of this repository is to provide a robust backend service for sending emails using different email
+providers. This service ensures high availability and reliability by abstracting the email sending process and allowing
+failover between multiple email providers. If one provider goes down, the service can quickly switch to another provider
+without affecting the end-users.
 
 ## Technologies Used
 
@@ -6,6 +13,34 @@
 - **Package Management**: npm
 - **Testing**: Jest (for unit tests)
 - **Containerization**: Docker
+
+## API Documentation
+
+The OpenAPI documentation for the endpoints can be
+accessed [here](https://email-service-backend-e5cf2a6fc011.herokuapp.com/api-docs/).
+
+## Design Patterns
+
+1. **Circuit Breaker**: The Circuit Breaker pattern is applied to manage the failover between different email providers.
+   This pattern helps to prevent the system from repeatedly trying to use a failing service, which can lead to cascading
+   failures. The `CircuitBreaker.ts` utility handles this logic by monitoring the success and failure rates of email
+   sending operations, allowing switching providers when necessary.
+
+
+2. **Interface**: The Interface pattern is used to define a common contract for all email providers. The
+   `IEmailProvider.ts`
+   file contains the interface that all email provider implementations (e.g., `SendGridProvider.ts`,
+   `MailgunProvider.ts`)
+   must
+   adhere to. This ensures that the EmailService.ts can interact with any email provider in a
+   consistent manner, promoting flexibility and extensibility.
+
+## Shared Libraries
+
+This project consumes a [shared repository](https://github.com/gonexe/shared-project) created by the same author that
+exposes an NPM library with TypeScript types
+to ensure consistency across multiple projects. These types help maintain type safety and uniformity when handling
+common data structures.
 
 ## Project Setup
 
