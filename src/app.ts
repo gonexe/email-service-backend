@@ -19,6 +19,11 @@ app.use(
 setupSwagger(app);
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.redirect('/api-docs');
+});
+
 app.use('/api/email', emailRoutes);
 app.use('/api/providers', providerRoutes);
 app.use(errorHandler);
