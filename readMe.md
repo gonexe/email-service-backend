@@ -37,7 +37,8 @@ accessed [here](https://email-service-backend-e5cf2a6fc011.herokuapp.com/api-doc
 
 ## Shared Libraries
 
-This project consumes a [shared repository](https://github.com/gonexe/shared-project) created by the same author that
+This project consumes a [shared repository](https://github.com/gonexe/email-service-shared) created by the same author
+that
 exposes an NPM library with TypeScript types
 to ensure consistency across multiple projects. These types help maintain type safety and uniformity when handling
 common data structures.
